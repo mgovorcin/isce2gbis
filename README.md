@@ -2,6 +2,7 @@
 Function to generate GBIS INSAR input file from ISCE generated interferogram
 
  Usage: GBISinput = ISCE2GBIS(isce_dir, seed_ref, crop)
+ 
  isce_dir  = '/dir/' - define the directory with filt_topophase.unw.geo file
 
  output_dir = 'dir' -define the output dir for GBIS insar input file
