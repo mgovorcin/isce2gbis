@@ -9,9 +9,8 @@ Function to generate GBIS INSAR input file from ISCE generated interferogram
 
  seed_ref = [Lon,Lat] - define the unwrapping seed point (default left upper corner), move it closer to deformation area but not on the area affected by deformation (OPTIONAL)
 
- crop = [lon_min, lon_max, lat_min, lat_max] - Define the window for
+ crop = [lon_min, lon_max, lat_min, lat_max] - Define the window for cropping (OPTIONAL)
  
- # cropping (OPTIONAL)
  =========================================================================
  This function is created by: Marin Govorcin (22.08.2019)
  
