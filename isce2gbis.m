@@ -17,8 +17,7 @@ function GBISinput = ISCE2GBIS(isce_dir, output_dir, seed_ref, crop)
 % This function is created by: Marin Govorcin (22.08.2019)
 % Address: Faculty of Geodesy, University of Zagreb
 % Email: mgovorcin@geof.hr
-% TO DO LIST: Script works with StripmapApp.py- update it to work with
-% TopsApp.py and InsarApp.py (code lines: 99, 102, 138)
+
 
 tic
 %% EDIT THE ENVIRONMENTAL PARAMETERS !!!
@@ -97,19 +96,20 @@ end
 
 %Check if unwrapping is done in 2 stages and use only unwrap_2_stage
 
-if length(ifg_dir_new) >1
     for n = 1:length(ifg_dir_new)
         ck = strfind(ifg_dir_new{n},'2stage');
         if ~isempty(ck)
             ifg = ifg_dir_new{n};
             ifg_dir = fileparts(ifg_dir_new{n});
+            stage2_flag = 1;
+        else
+            ifg = ifg_dir_new{n};
+            ifg_dir = fileparts(ifg_dir_new{n});
         end
     end
-    stage2_flag = 1;
+    
     clear ifg_dir_new ck n
-else
-    ifg = ifg_dir;
-end
+
     
 %Look for the connected part of unw filt_*.unw,conncomp.geo in the input folder, in matlab version after
 %2015 this can be done with 'dir **/*unw.conncomp.geo'
@@ -146,6 +146,7 @@ end
  %Define the name of ISCE processing folder as SAT_DIRECTION_MASTER_SLAVE;
  %example ERS_DESC_199612237_20010907
  [filepath, output_name] = fileparts(strcat(isce_dir));
+ display(output_name)
 
  %% EXPORT AND CONVERSION
 isce_export = sprintf('cd %s; python %s/applications/isce2gis.py vrt -i %s',isce_dir,isce_install_dir,ifg);
@@ -407,10 +408,3 @@ end
  end  
  rmdir(temp_dir,'s');
  toc 
-
-
-
-
-
-
-
