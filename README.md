@@ -19,4 +19,4 @@ Function to generate GBIS INSAR input file from ISCE generated interferogram
  
  Email: mgovorcin@geof.hr
  
- TO DO LIST: Script works with StripmapApp.py- update it to work with TopsApp.py and InsarApp.py (code lines: 99, 102, 138)
+ NEEDED to work: installed ISCE and GDAL
