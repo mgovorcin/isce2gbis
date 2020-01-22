@@ -412,8 +412,9 @@ end
     legend(a,'Reference Point')
     end
     hold off    
-    cmapSeismo = colormap_cpt('GMT_seis.cpt', 100);
-    colormap(cmapSeismo)
+    %cmapSeismo = colormap_cpt('GMT_seis.cpt', 100);
+    %colormap(cmapSeismo)
+    colormap('jet')
     caxis([0 wavelength/2])
     axis tight
     axis equal
