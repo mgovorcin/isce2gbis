@@ -333,10 +333,10 @@ end
 
 %crop area
 if crop_flag==1
-    crop_lim=find(GBIS(:,1)>crop(:,1) & GBIS(:,1)<crop(:,2) & GBIS(:,2)>crop(:,3) & GBIS(:,2)<crop(:,4));
+    crop_lim=find(GBIS(:,1)<crop(:,1) & GBIS(:,1)>crop(:,2) & GBIS(:,2)>crop(:,3) & GBIS(:,2)<crop(:,4));
     GBIS=GBIS(crop_lim,:);
  if exist('cp_flag')    
-     crop_lim=find(CONN_PARTS(:,1)>crop(:,1) & CONN_PARTS(:,1)<crop(:,2) & CONN_PARTS(:,2)>crop(:,3) & CONN_PARTS(:,2)<crop(:,4));
+     crop_lim=find(CONN_PARTS(:,1)<crop(:,1) & CONN_PARTS(:,1)>crop(:,2) & CONN_PARTS(:,2)>crop(:,3) & CONN_PARTS(:,2)<crop(:,4));
      CONN_PARTS=CONN_PARTS(crop_lim,:);
  end
 end
