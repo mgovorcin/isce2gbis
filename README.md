@@ -19,4 +19,4 @@ Function to generate GBIS INSAR input file from ISCE generated interferogram
  
  Email: mgovorcin@geof.hr
  
- NEEDED to work: installed ISCE and GDAL
+ NEED to work: installed ISCE and GDAL
